@@ -1,1 +1,0 @@
-# Proyecto Maratón Lacava 10K
