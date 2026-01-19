@@ -1,0 +1,1086 @@
+/* =========================================
+   1. FUENTES (TIPOGRAFÍA)
+   ========================================= */
+@font-face { font-family: 'Urbanist'; src: url('../assets/fonts/Urbanist-Black.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Urbanist'; src: url('../assets/fonts/Urbanist-BlackItalic.ttf') format('truetype'); font-weight: 900; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Urbanist'; src: url('../assets/fonts/Urbanist-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Urbanist'; src: url('../assets/fonts/Urbanist-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Urbanist'; src: url('../assets/fonts/Urbanist-ExtraBold.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Urbanist'; src: url('../assets/fonts/Urbanist-ExtraBoldItalic.ttf') format('truetype'); font-weight: 800; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Urbanist'; src: url('../assets/fonts/Urbanist-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Urbanist'; src: url('../assets/fonts/Urbanist-Light.ttf') format('truetype'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Urbanist'; src: url('../assets/fonts/Urbanist-LightItalic.ttf') format('truetype'); font-weight: 300; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Urbanist'; src: url('../assets/fonts/Urbanist-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Urbanist'; src: url('../assets/fonts/Urbanist-MediumItalic.ttf') format('truetype'); font-weight: 500; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Urbanist'; src: url('../assets/fonts/Urbanist-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Urbanist'; src: url('../assets/fonts/Urbanist-Semibold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Urbanist'; src: url('../assets/fonts/Urbanist-SemiboldItalic.ttf') format('truetype'); font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Urbanist'; src: url('../assets/fonts/Urbanist-Thin.ttf') format('truetype'); font-weight: 100; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Urbanist'; src: url('../assets/fonts/Urbanist-ThinItalic.ttf') format('truetype'); font-weight: 100; font-style: italic; font-display: swap; }
+
+/* =========================================
+   2. VARIABLES Y RESET
+   ========================================= */
+:root {
+    --color-primary: #FF3B3B;     /* Rojo Principal */
+    --color-dark: #1A1A1A;        /* Negro Texto */
+    --color-gray-bg: #F8F9FA;     /* Fondo gris muy claro */
+    --color-white: #FFFFFF;
+    --font-main: 'Urbanist', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    line-height: 1.5;
+    overflow-x: hidden; /* Evita scroll horizontal indeseado */
+}
+
+/* Contenedor Responsivo */
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+img { max-width: 100%; display: block; }
+input, select, button { font-family: var(--font-main); outline: none; }
+
+/* =========================================
+   3. HEADER
+   ========================================= */
+.main-header {
+    padding: 15px 0;
+    margin-bottom: 20px;
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.brand-icon {
+    height: 50px; /* Tamaño del logo rojo */
+    width: auto;
+    fill:#FF3B3B;
+}
+.main-nav a {
+    text-decoration: none;
+    color: var(--color-dark);
+    margin-left: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    opacity: 0; /* Empiezan invisibles */
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+.main-nav a:hover, .main-nav a.active {
+    color: var(--color-primary);
+}
+
+.main-nav a:nth-child(1) { animation-delay: 0.2s; } /* Inscripciones */
+.main-nav a:nth-child(2) { animation-delay: 0.4s; } /* Resultados */
+.main-nav a:nth-child(3) { animation-delay: 0.6s; } /* Carrera */
+
+/* =========================================
+   4. HERO BANNER (Amarillo)
+   ========================================= */
+.main-hero {
+    border-radius: 0px;
+    position: relative;
+    height: 590px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.hero-text {
+    padding-left: 60px;
+    z-index: 2;
+    width: 50%;
+}
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 0.95;
+    color: var(--color-dark);
+    letter-spacing: -1px;
+}
+.hero-text .text-red { color: var(--color-primary); }
+
+.hero-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.hero-image img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Decoración franjas azul/roja */
+.hero-stripes {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: linear-gradient(to right, #0057B8 50%, #FF3B3B 50%);
+    z-index: 3;
+}
+
+/* =========================================
+   5. TICKER (Barra Infinita)
+   ========================================= */
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    background-color: #Eaeaea;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    padding: 15px 0;
+    opacity: 0; /* Empieza invisible */
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.2s; /* Aparece al final, después del Banner */
+}
+.ticker-move {
+    display: inline-block;
+    white-space: nowrap;
+    /* Aquí definimos la animación */
+    animation: ticker-scroll 25s linear infinite; 
+}
+.ticker-item {
+    display: inline-block;
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: var(--color-dark);
+    letter-spacing: 1px;
+    padding-right: 20px; /* Espacio entre las repeticiones */
+}
+
+/* Definición del movimiento */
+@keyframes ticker-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.33%); } /* Se mueve 1/3 porque puse 3 repeticiones */
+}
+
+/* =========================================
+   6. STATS (Píldoras)
+   ========================================= */
+.stats-section {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin-bottom: 4%;
+}
+.stat-group { display: flex; align-items: center; gap: 15px; }
+.stat-pill {
+    padding: 10px 35px;
+    border-radius: 40px;
+    color: white;
+    font-weight: 900;
+    font-size: 1.8rem;
+}
+.pill-red { background-color: #FF3B3B; }
+.pill-yellow { background-color: #FFD600; color: black; }
+.pill-blue { background-color: #0057B8; }
+.stat-group p { font-weight: 800; line-height: 1.1; text-transform: uppercase; font-size: 1.5rem; }
+
+/* =========================================
+   7. INSCRIPCIÓN (Grid Mapa/Form)
+   ========================================= */
+.registration-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+    align-items: flex-start;
+}
+
+/* Mapa */
+.map-container {
+    border: 12px solid var(--color-primary);
+    border-radius: 35px;
+    overflow: hidden;
+    background: white;
+}
+.no-interact {
+    user-select: none;       /* No deja seleccionar */
+    pointer-events: none;    /* No deja hacer click */
+    -webkit-user-drag: none; /* No deja arrastrar en Chrome/Safari */
+}
+.map-header {
+    background-color: var(--color-primary);
+    color: white;
+    text-align: center;
+    font-weight: 800;
+    padding: 10px;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+/* Formulario */
+.form-title { font-size: 2.2rem; margin-bottom: 10px; text-transform: uppercase; line-height: 1; }
+.form-desc { color: #666; margin-bottom: 30px; font-size: 1rem; }
+.input-wrapper { margin-bottom: 20px; }
+.input-wrapper label {
+    display: block;
+    font-weight: 800;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+.input-wrapper input, .input-wrapper select {
+    width: 100%;
+    padding: 15px 25px;
+    background-color: #E6E6E6;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+.btn-submit {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 10px;
+    width: auto;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+.btn-submit:hover { transform: scale(1.05); }
+
+/* Banner Sponsor */
+.sponsor-banner img { width: 100%; border-radius: 30px; margin-bottom: 40px; }
+
+/* Footer */
+.main-footer {
+    background-color: #e7e7e7; /* El gris claro de tu imagen */
+    padding: 25px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Uno a cada extremo */
+    align-items: center;            /* Centrados verticalmente */
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: #1A1A1A;
+    font-weight: 500;
+}
+/* =========================================
+   8. RESPONSIVE (Monitores Universidad)
+   ========================================= */
+/* Ajustes para pantallas medianas (Laptops/Monitores viejos) */
+@media (max-width: 1400px) {
+    .container { width: 95%; } /* Aprovechar más ancho */
+    
+    .main-hero { height: 320px; border-radius: 30px; }
+    .hero-text h1 { font-size: 2.8rem; }
+    
+    .ticker-item { font-size: 1.1rem; }
+    
+    .registration-split { gap: 30px; }
+    .map-container { border-width: 8px; }
+    
+    .form-title { font-size: 1.8rem; }
+    .input-wrapper input, .input-wrapper select { padding: 10px 20px; }
+}
+
+/* Ajustes para Tablets */
+@media (max-width: 900px) {
+    .registration-split { grid-template-columns: 1fr; } /* Columna única */
+    .hero-image { opacity: 0.2; width: 100%; }
+}
+
+/* =========================================
+   9. ANIMACIONES (Nuevo)
+   ========================================= */
+
+/* Estado inicial del texto: Invisible y desplazado */
+.stat-group p {
+    opacity: 0;
+    transform: translateX(20px); /* Empieza un poco a la derecha */
+    animation: textFadeIn 0.8s ease-out forwards;
+    animation-delay: 0.5s; /* Espera medio segundo para empezar, dando tiempo a los números */
+}
+
+/* Definición de la animación */
+@keyframes textFadeIn {
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Termina en su posición original */
+    }
+}
+
+/* =========================================
+   ANIMACIONES DE ENTRADA (Banner y Logo)
+   ========================================= */
+
+/* 1. Definimos la animación: de invisible y abajo -> a visible y en su sitio */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Empieza 30px más abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);    /* Termina en su lugar original */
+    }
+}
+
+/* 2. Aplicamos al Logo del Header */
+.brand-icon {
+    opacity: 0; /* Comienza invisible */
+    animation: fadeInUp 0.8s ease-out forwards; /* Dura 0.8 segundos */
+    filter: invert(36%) sepia(54%) saturate(2729%) hue-rotate(338deg) brightness(101%) contrast(105%);
+}
+
+/* 3. Aplicamos al Banner Principal */
+.main-hero {
+    opacity: 0; /* Comienza invisible */
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.3s; /* Espera un poquito (0.3s) para que salga después del logo */
+}
+
+/* =========================================
+   ANIMACIÓN AL HACER SCROLL
+   ========================================= */
+
+/* Estado inicial: Invisible y desplazado hacia abajo */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px); /* 50px más abajo */
+    transition: all 1s ease-out; /* La transición dura 1 segundo */
+}
+
+/* Estado activo: Visible y en su sitio (JS agregará esta clase) */
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- ESTILOS DE VALIDACIÓN Y ERROR --- */
+.input-error {
+    border: 2px solid #ff3b3b !important; /* Borde Rojo */
+    background-color: #fff5f5;
+    transition: all 0.3s ease;
+}
+
+.error-text {
+    color: #ff3b3b;
+    font-size: 0.8rem; /* Letra pequeña */
+    font-weight: 700;
+    margin-top: 5px;
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* El asterisco rojo antes del mensaje */
+.error-text::before {
+    content: "* ";
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mensaje de éxito debajo del botón */
+.success-message {
+    color: #ffffff; /* Verde éxito */
+    font-weight: 700;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: #28a745;
+    border: 1px solid #28a745;
+    border-radius: 25px;
+    animation: fadeIn 0.5s ease-out;
+    animation: fadeOut 0.5s ease-out;
+}
+
+/* Botón inhabilitado (gris) */
+.btn-submit:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    transform: none; /* Evita que crezca al pasar el mouse */
+    box-shadow: none;
+}
+
+/* =========================================
+   11. AJUSTES ESPECÍFICOS DISEÑO ADMIN (FOTO)
+   ========================================= */
+
+/* Cronómetro Amarillo (Sobrescribe el oscuro) */
+.timer-container {
+    background-color: #FFD600; /* Amarillo */
+    color: var(--color-primary);
+    border-radius: 50px;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(255, 214, 0, 0.3);
+}
+
+.timer-label {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--color-primary); /* Texto Rojo */
+}
+.timer-label strong {
+    display: block;
+    font-weight: 900;
+    font-size: 3.5rem;
+}
+
+.timer-digits {
+    display: flex;
+    gap: 15px;
+}
+.digit-box {
+    background-color: var(--color-primary); /* Rojo */
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 15px 25px;
+    border-radius: 15px;
+    min-width: 100px;
+    text-align: center;
+}
+
+/* Información de Estado (Debajo del timer) */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 30px 0;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+.status-bar span span { color: var(--color-primary); }
+.status-bar .status-blue { color: #0057B8; }
+
+/* Botonera Grid (6 botones) */
+.admin-controls-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 20px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+.btn-admin {
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.2s;
+}
+.btn-admin:hover { transform: scale(1.03); opacity: 0.9; }
+
+.btn-blue { background-color: #0057B8; }
+.btn-red { background-color: #FF3B3B; }
+.btn-yellow { background-color: #FFD600; color: black; }
+
+/* Ajuste Tabla (Nombres Bold) */
+.name-cell b { font-weight: 900; }
+
+/* =========================================
+   12. NOTIFICACIONES VISUALES (SIN ALERT)
+   ========================================= */
+
+/* Contenedor donde aparecerán los mensajes (encima del timer) */
+#notification-area {
+    width: 100%;
+    height: 50px; /* Espacio reservado para que no empuje mucho el diseño */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* El estilo del mensaje (Basado en tu código) */
+.toast-message {
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1rem;
+    padding: 10px 30px;
+    background-color: #28a745; /* Verde éxito */
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    
+    /* Animación de entrada */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+/* Animación de salida (se agrega con JS) */
+.toast-message.fade-out {
+    animation: fadeOutDown 0.5s forwards;
+}
+
+/* Definición de animaciones */
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOutDown {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Estilos para botones deshabilitados */
+button:disabled {
+    background-color: #b1b1b1 !important;
+    cursor: not-allowed;
+    transform: none !important;
+    opacity: 0.7;
+    color: #333;
+}
+
+/* =========================================
+   13. CORRECCIÓN LAYOUT (FOOTER AL FONDO)
+   ========================================= */
+
+/* Hacemos que el cuerpo ocupe al menos el 100% de la altura de la pantalla */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* El main se estira para empujar el footer hacia abajo */
+main.container {
+    flex: 1;
+    width: 100%; /* Asegura que use todo el ancho disponible */
+}
+
+/* =========================================
+   14. ESTILO DE TABLA PROFESIONAL (ADMIN.JPG)
+   ========================================= */
+
+.table-container {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    overflow-x: auto; /* Por si en celulares es muy ancha */
+}
+
+.admin-table {
+    width: 100%; /* Ocupa todo el espacio horizontal */
+    border-collapse: collapse; /* Elimina espacios entre celdas */
+    font-family: 'Urbanist', sans-serif;
+    table-layout: auto; /* Permite que las columnas se ajusten */
+}
+
+/* --- CABECERA DE LA TABLA --- */
+.admin-table thead th {
+    text-align: center; /* Por defecto centrados */
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 15px 10px;
+    border-bottom: 5px solid #000; /* La línea negra gruesa del diseño */
+    color: var(--color-dark);
+    letter-spacing: 0.5px;
+}
+
+/* Alineaciones específicas según tu foto */
+.admin-table th:first-child, 
+.admin-table td:first-child {
+    text-align: left; /* Nombre alineado a la izquierda */
+    padding-left: 20px;
+    width: 20%; /* Le damos más espacio al nombre */
+}
+
+.admin-table th:nth-child(3), 
+.admin-table td:nth-child(3) {
+    text-align: center; /* Municipio alineado a la izquierda */
+}
+
+/* --- CUERPO DE LA TABLA --- */
+.admin-table tbody td {
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    border-bottom: 1px solid #e3e3e3; /* Línea suave entre filas */
+    vertical-align: middle;
+    text-align: center; /* La mayoría de datos van centrados */
+}
+
+/* Estilo para los nombres (Mayúscula y Negrita el apellido) */
+.name-cell {
+    font-size: 1.15rem;
+    color: #000;
+}
+.name-cell b {
+    font-weight: 900;
+}
+
+/* Mensaje cuando está vacía */
+#empty-msg {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    color: #999;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* =========================================
+   15. ESTILO SWITCHES (BOTONES VERDES)
+   ========================================= */
+/* El contenedor del switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 32px;
+}
+
+/* Ocultar el checkbox original feo */
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* El deslizador (la parte gris/verde) */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc; /* Gris cuando está apagado */
+    transition: .4s;
+    border-radius: 34px; /* Bordes redondos */
+}
+
+/* El círculo blanco interior */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Cuando está activado (CHECKED) */
+input:checked + .slider {
+    background-color: #00C853; /* Verde brillante tipo iOS/Android */
+}
+
+input:checked + .slider:before {
+    transform: translateX(28px); /* Mover el círculo a la derecha */
+}
+
+/* =========================================
+   16. BOTÓN DE BORRAR (X ROJA)
+   ========================================= */
+.btn-delete {
+    background: none;
+    border: none;
+    color: #ccc; /* Gris suave por defecto */
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 5px 10px;
+}
+
+.btn-delete:hover {
+    color: #FF3B3B; /* Rojo al pasar el mouse */
+    transform: scale(1.2);
+}
+
+/* --- ANIMACIONES DE LA TABLA Y ELEMENTOS --- */
+
+/* 1. Animación de entrada para las filas (Aparecer desde abajo) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Clase base para las filas */
+.runner-row {
+    opacity: 0; /* Invisible al inicio para que la animación funcione */
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* 2. Animación de SALIDA (Al borrar) */
+@keyframes slideOutRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100px); /* Se va a la derecha */
+        height: 0;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.runner-row.deleting {
+    animation: slideOutRight 0.5s ease forwards;
+    pointer-events: none; /* Evita clics mientras desaparece */
+}
+
+/* 3. Animación suave para botones */
+.btn-admin {
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-admin:hover:not(:disabled) {
+    transform: translateY(-2px); /* Se levanta un poco */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombra más fuerte */
+    filter: brightness(1.1);
+}
+
+.btn-admin:active:not(:disabled) {
+    transform: scale(0.98); /* Efecto de presionar */
+}
+
+/* 4. Animación sutil para el Timer al cargar */
+.timer-display {
+    animation: popIn 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* --- FORZAR ESTILO DE NOMBRES EN RESULTADOS --- */
+.results-table-final .name-cell-result {
+    text-transform: uppercase !important; /* SIEMPRE MAYÚSCULAS */
+    font-weight: 800 !important;          /* BIEN NEGRITA */
+    font-size: 1.1rem !important;         /* Un poco más grande */
+    letter-spacing: 0.5px;
+    text-align: left;
+    padding-left: 20px !important;        /* Separación del borde */
+    color: #2c3e50;
+}
+
+/* Centrar la posición */
+.results-table-final .pos-cell {
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+/* --- BARRA DE ESTATUS Y HORA --- */
+.status-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Separación entre estatus y hora */
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.badge-pill {
+    padding: 10px 25px;
+    border-radius: 50px; /* Bordes muy redondos */
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra elegante */
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio para el icono */
+}
+
+/* Estilo específico para la píldora de Hora de Salida */
+.time-pill {
+    background-color: #2c3e50; /* Azul oscuro elegante */
+    color: #fff;
+    border: 2px solid #34495e;
+}
+
+/* Animación de pulso para cuando está "EN CURSO" */
+@keyframes statusPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(39, 174, 96, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
+}
+
+.badge-pulse {
+    animation: statusPulse 2s infinite;
+}
+
+/* =========================================
+   ANIMACIONES DEL TIMER
+   ========================================= */
+
+/* 1. Definimos la animación (Fade In + Subida suave) */
+@keyframes softEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95); /* Empieza invisible, abajo y un poco pequeño */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1); /* Termina visible, en su sitio y tamaño normal */
+    }
+}
+
+/* 2. Aplicamos la animación al contenedor del Timer */
+.timer-container {
+    /* Esta línea activa la animación: dura 1.2 segundos y usa una curva suave */
+    animation: softEntrance 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    
+    /* Aseguramos que tenga transición suave si cambias algo más adelante */
+    transition: all 0.3s ease;
+}
+
+/* 3. (Opcional) Un efecto sutil de "latido" para el texto EN VIVO */
+@keyframes pulseLive {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+    100% { opacity: 0.7; }
+}
+
+.timer-label strong {
+    color: #e74c3c; /* Un rojo o el color que prefieras */
+    animation: pulseLive 2s infinite ease-in-out;
+}
+
+/* 4. Efecto Hover suave en los dígitos */
+.digit-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.digit-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   ESTILOS DEL LOGIN (loginadmin.html)
+   ========================================= */
+
+.login-body {
+    background: white;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-card {
+    background: rgb(237, 237, 237);
+    padding: 50px;
+    border-radius: 30px;
+    text-align: center;
+    opacity: 0; /* Importante: empieza invisible para no parpadear */
+    animation: loginEntrance 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.login-logo {
+    height: 60px;
+    
+    /* ESTO ES LO QUE LO CENTRA: */
+    display: block;          /* 1. Comportarse como bloque */
+    margin-left: auto;       /* 2. Margen izquierdo automático */
+    margin-right: auto;      /* 3. Margen derecho automático */
+    
+    margin-bottom: 20px;     /* Tu margen inferior original */
+}
+
+.login-header h2 {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 800;
+    color: #474747;
+}
+
+.login-header p {
+    color: #575b5c;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+    color:#525252;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #525252;
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ecf0f1;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: 0.3s;
+    font-weight: 500px;
+}
+
+.input-group input:focus {
+    border-color: #34db63;
+    outline: none;
+}
+
+.btn-login {
+    width: 100%;
+    background-color: #2d2d2d;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.btn-login:hover {
+    background-color: #34495e;
+    transform: translateY(-2px);
+}
+
+.error-msg {
+    background: #e74c3c;
+    color: white;
+    padding: 10px;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    border: 1px solid #ef9a9a;
+}
+
+.login-footer {
+    margin-top: 25px;
+    font-size: 0.9rem;
+}
+
+.login-footer a {
+    color: #787878;
+    text-decoration: none;
+    font-weight: bold;
+}
+.login-footer a:hover { color: #2c3e50; }
+
+/* Animación de vibración para error */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+.shake { animation: shake 0.3s; }
+
+/* =========================================
+   ANIMACIÓN DE ENTRADA LOGIN
+   ========================================= */
+
+/* 1. Definimos los Keyframes (El movimiento) */
+@keyframes loginEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95); /* Empieza invisible, abajo y un poco pequeño */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1); /* Termina visible, en su sitio y tamaño normal */
+    }
+}
+
+/* --- CONFIGURACIÓN HORA DE SALIDA --- */
+.start-time-config {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.start-time-config label {
+    display: block;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.time-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.time-inputs input, .time-inputs select {
+    padding: 8px;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    color: #2c3e50;
+    width: 60px;
+}
+
+.time-inputs select {
+    width: 70px;
+    background-color: #ecf0f1;
+}
+
+.time-inputs span {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
