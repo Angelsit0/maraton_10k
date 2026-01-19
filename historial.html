@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Carreras - Panel Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo-brand">
+                <img src="assets/img/logorun.svg" alt="Logo" class="brand-icon"> 
+            </div>
+            <nav class="main-nav">
+                <span style="font-weight:900; font-size:1.2rem; margin-right:20px;">HISTORIAL</span>
+                <a href="admin.html">Carrera Actual</a>
+                <a href="historial.html" class="active">Historial</a>
+                <a href="#" onclick="logout()" style="color: #c0392b; font-weight:bold;">
+                    <i class="fa-solid fa-right-from-bracket"></i> Salir
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <div class="status-bar" style="justify-content: space-between;">
+            <span><i class="fa-solid fa-clock-rotate-left"></i> REGISTRO DE CARRERAS ANTERIORES</span>
+            <button class="btn-admin btn-red" id="btn-clear-history" style="padding: 5px 15px; font-size: 0.8rem;">
+                <i class="fa-solid fa-trash"></i> BORRAR HISTORIAL
+            </button>
+        </div>
+
+        <div class="table-container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>FECHA / HORA</th>
+                        <th>DURACIÓN</th>
+                        <th>ESTATUS</th>
+                        <th>PARTICIPANTES</th>
+                        <th>DQ</th>
+                        <th style="width: 35%;">PODIO (TOP 3)</th>
+                    </tr>
+                </thead>
+                <tbody id="historial-body">
+                    </tbody>
+            </table>
+            
+            <div id="empty-history-msg" style="text-align:center; padding:40px; color:#666; display:none;">
+                <i class="fa-solid fa-folder-open" style="font-size: 3rem; margin-bottom: 10px; color: #ccc;"></i><br>
+                No hay carreras guardadas en el historial.
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/auth.js"></script> <script src="js/historial.js"></script> </body>
+</html>

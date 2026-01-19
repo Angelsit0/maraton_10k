@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción - #Caminata10K - Carabobo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo-brand">
+                <img src="assets/img/logorun.svg" alt="Logo Caminata" class="brand-icon"> 
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="active">Inscripciones</a>
+                <a href="resultados.html">Resultados</a>
+                <a href="loginadmin.html">Panel</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="main-hero">
+            <img src="assets/img/bannerinscripcion.png" draggable="false" alt="Banner Caminata 10K">
+        </section>
+
+        <section class="ticker-wrap">
+            <div class="ticker-move">
+                <div class="ticker-item">
+                    #CORRERESSALUD &nbsp;&nbsp; #RUN4LIFE &nbsp;&nbsp; #CORRECAMINOS &nbsp;&nbsp; #CORRERESSALUD &nbsp;&nbsp; #RUN4LIFE &nbsp;&nbsp;
+                </div>
+                <div class="ticker-item">
+                    #CORRERESSALUD &nbsp;&nbsp; #RUN4LIFE &nbsp;&nbsp; #CORRECAMINOS &nbsp;&nbsp; #CORRERESSALUD &nbsp;&nbsp; #RUN4LIFE &nbsp;&nbsp;
+                </div>
+                 <div class="ticker-item">
+                    #CORRERESSALUD &nbsp;&nbsp; #RUN4LIFE &nbsp;&nbsp; #CORRECAMINOS &nbsp;&nbsp; #CORRERESSALUD &nbsp;&nbsp; #RUN4LIFE &nbsp;&nbsp;
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stat-group">
+                <div class="stat-pill pill-red" data-val="500">+100</div>
+                <p>CARRERAS <br>REALIZADAS</p>
+            </div>
+            <div class="stat-group">
+                <div class="stat-pill pill-yellow" data-val="900">+100</div>
+                <p>EVENTOS <br>DEPORTIVOS</p>
+            </div>
+            <div class="stat-group">
+                <div class="stat-pill pill-blue" data-val="100">+10</div>
+                <p>CATEGORÍAS <br>DEPORTIVAS</p>
+            </div>
+        </section>
+
+        <section class="registration-split scroll-reveal">
+            
+            <div class="map-clean">
+                <img src="assets/img/mapa.png" alt="Mapa Recorrido" draggable="false" style="width: 100%; height: auto; border-radius: 20px;">
+            </div>
+
+            <div class="form-container">
+                <h2 class="form-title">INSCRÍBETE AQUÍ</h2>
+                
+                <p class="form-desc">
+                    ¡Prepárate para el desafío del año! Completa tus datos a continuación para asegurar tu lugar en la gran carrera 10K de Carabobo. 
+                    <br><br>
+                    Esta ruta ha sido diseñada para probar tu resistencia a través de las avenidas más icónicas de la ciudad. Recuerda verificar tu categoría según tu edad y municipio antes de enviar el formulario. ¡Correr es salud, te esperamos en la meta!
+                </p>
+
+                <form id="registroForm">
+                    <div class="input-wrapper">
+                        <label>CÉDULA</label>
+                        <input type="number" id="cedula" placeholder="Ej: 30565579">
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label>NOMBRE Y APELLIDO</label>
+                        <input type="text" id="nombre" placeholder="Ej: Anibal García">
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label>MUNICIPIO</label>
+                        <select id="municipio"> <option value="">Seleccione...</option>
+                            <option value="Bejuma">Bejuma</option>
+                            <option value="Carlos Arvelo">Carlos Arvelo</option>
+                            <option value="Diego Ibarra">Diego Ibarra</option>
+                            <option value="Guacara">Guacara</option>
+                            <option value="Juan José Mora">Juan José Mora</option>
+                            <option value="Libertador">Libertador</option>
+                            <option value="Los Guayos">Los Guayos</option>
+                            <option value="Miranda">Miranda</option>
+                            <option value="Montalbán">Montalbán</option>
+                            <option value="Naguanagua">Naguanagua</option>
+                            <option value="Puerto Cabello">Puerto Cabello</option>
+                            <option value="San Diego">San Diego</option>
+                            <option value="San Joaquín">San Joaquín</option>
+                            <option value="Valencia">Valencia</option>
+                        </select>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label>EDAD</label>
+                        <input type="number" id="edad" placeholder="Ej: 24">
+                    </div>
+
+                    <button type="submit" class="btn-submit">INSCRIBIR</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="sponsor-banner scroll-reveal">
+             <img src="assets/img/bannercarro.png" draggable="false" alt="Patrocinantes Oficiales - Recolecta KM Gana un 0K"> 
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="assets/img/logorun.svg" alt="Logo Footer" style="height: 40px; filter: grayscale(100%); opacity: 0.8;">
+            </div>
+
+            <p class="footer-text">Powered by <strong>Anibal García & Angel Torres</strong></p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
