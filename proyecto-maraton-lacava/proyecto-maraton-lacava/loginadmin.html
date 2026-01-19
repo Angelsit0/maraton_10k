@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Administrativo - Carrera</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="login-body">
+
+    <div class="login-container">
+        <div class="login-card scroll-reveal visible">
+            <div class="login-header">
+                <img src="assets/img/logorun.svg" alt="Logo" class="login-logo">
+                <h2>PANEL DE CONTROL</h2>
+                <p>Ingrese sus credenciales</p>
+            </div>
+
+            <form id="login-form">
+                <div class="input-group">
+                    <label><i class="fa-solid fa-user"></i> Usuario</label>
+                    <input type="text" id="username" placeholder="admin" autocomplete="off">
+                </div>
+
+                <div class="input-group">
+                    <label><i class="fa-solid fa-lock"></i> Contraseña</label>
+                    <input type="password" id="password" placeholder="••••••">
+                </div>
+
+                <div id="login-error" class="error-msg" style="display: none;">
+                    <i class="fa-solid fa-circle-exclamation"></i> Usuario o clave incorrectos
+                </div>
+
+                <button type="submit" class="btn-submit btn-login">INGRESAR AL SISTEMA</button>
+            </form>
+
+            <div class="login-footer">
+                <a href="index.html">← Volver al Inicio</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+
+</body>
+</html>
